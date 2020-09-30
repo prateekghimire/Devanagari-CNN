@@ -1,11 +1,8 @@
 import tensorflow as tf
 import streamlit as st
 import cv2
-import keras
 from PIL import Image, ImageOps
 import numpy as np
-import joblib
-
 mappingdict={
     0:'क',
     1:'ख',
@@ -57,7 +54,7 @@ mappingdict={
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-model=joblib.load('my_model.sav')
+model=tf.keras.models.load_model('model.h5')
 
 st.write("""
         # DEVANAGARI CHARACTER PREDICTION
